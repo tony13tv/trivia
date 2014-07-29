@@ -36,15 +36,15 @@
 
 		public $images = [];
 
-		public function save($data = null, $validate = true, $fieldList = array()) {
+		public function beforeSave($options = array()) {
 			foreach ($this->images as $image) {
-				if (is_uploaded_file($data[ $this->alias ][ $image ]['tmp_name'])) {
-					move_uploaded_file($data[ $this->alias ][ $image ]['tmp_name'], WWW_ROOT . 'files' . DS . $data[ $this->alias ][ $image ]['name']);
+				if (is_uploaded_file($this->data[ $this->alias ][ $image ]['tmp_name'])) {
+					move_uploaded_file($this->data[ $this->alias ][ $image ]['tmp_name'], WWW_ROOT . 'files' . DS . $this->data[ $this->alias ][ $image ]['name']);
 
 					// store the filename in the array to be saved to the db
-					$data[ $this->alias ][ $image ] = $data[ $this->alias ][ $image ]['name'];
+					$this->data[ $this->alias ][ $image ] = $this->data[ $this->alias ][ $image ]['name'];
 				}
 			}
-			parent::save($data, $validate, $fieldList);
+			return parent::beforeSave($options);
 		}
 	}

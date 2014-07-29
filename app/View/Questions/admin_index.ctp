@@ -20,7 +20,12 @@
 					<?= $question['Question']['content'] ?>
 				</td>
 				<td>
-					<?= $question['Question']['image'] ?>
+					<? if ($question['Question']['image']) {
+						echo $this->html->image('/files' . DS . $question['Question']['image']);
+					} else {
+						echo $this->html->image('http://placehold.it/100x100');
+					} ?>
+
 				</td>
 				<td>
 					<?= $question['Question']['category_id'] ?>
