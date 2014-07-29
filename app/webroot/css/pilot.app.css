@@ -1,0 +1,106 @@
+/* CSS Document */
+@font-face {
+  font-family: 'Brain Flower';
+  src: url(../fonts/brainflower.ttf); }
+body {
+  font-family: Helvetica, Arial, san-serif;
+  margin: 0;
+  padding: 0; }
+  body * {
+    position: relative; }
+
+.clearfix {
+  clear: both; }
+  .clearfix::before, .clearfix::after {
+    content: "";
+    display: block; }
+
+.pull-left {
+  float: left !important; }
+
+.pull-right {
+  float: right !important; }
+
+.hidden {
+  display: none;
+  visibility: hidden; }
+
+.brain-flower {
+  font-family: "Brain Flower"; }
+
+@media screen {
+  #container {
+    width: 800px; }
+
+  .container {
+    margin: 0 auto; } }
+#container {
+  background: url(../img/paper.background.jpg); }
+
+#header {
+  background: white; }
+
+.color.white {
+  color: white; }
+.color.blue {
+  color: #0061af; }
+.color.white {
+  color: white; }
+
+.papercut {
+  background: url(../img/paper.cut.png);
+  padding-top: 112px;
+  text-align: center; }
+
+.game-summary {
+  font-size: 48px;
+  width: 679px;
+  text-align: center;
+  margin: 0 auto; }
+
+#play_btn {
+  background-color: #0061af;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 48px;
+  letter-spacing: 10px; }
+  #play_btn:hover {
+    background-color: #003473; }
+
+#login .title {
+  padding-top: 30px;
+  margin: 0 auto;
+  display: block;
+  text-align: center; }
+
+form label {
+  width: 240px;
+  display: block;
+  float: left;
+  text-align: right;
+  font-weight: bold;
+  margin-right: 33px;
+  color: white; }
+form input {
+  margin-bottom: 10px; }
+
+#register {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff; }
+  #register h1, #register h2, #register h3, #register h4, #register h5, #register h6 {
+    color: inherit; }
+
+.health {
+  background-color: #145fd3;
+  padding: 10px 200px;
+  text-align: center;
+  color: #fff; }
+
+.image {
+  height: 562px; }
+
+.question {
+  background: url(../img/larach.paper.jpg) 0px center no-repeat;
+  padding-top: 16px;
+  text-align: center; }
