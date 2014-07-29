@@ -4248,3 +4248,23 @@ Stack Trace:
 #3 /Applications/MAMP/htdocs/trivia/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(GroupsController), Object(CakeRequest))
 #4 /Applications/MAMP/htdocs/trivia/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #5 {main}
+2014-07-29 16:46:46 Error: [MissingActionException] Action QuestionsController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuestionsController',
+  'action' => 'index',
+)
+Request URL: /trivia/questions/
+Stack Trace:
+#0 /Applications/MAMP/htdocs/trivia/lib/Cake/Routing/Dispatcher.php(191): Controller->invokeAction(Object(CakeRequest))
+#1 /Applications/MAMP/htdocs/trivia/lib/Cake/Routing/Dispatcher.php(165): Dispatcher->_invoke(Object(QuestionsController), Object(CakeRequest))
+#2 /Applications/MAMP/htdocs/trivia/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-07-29 16:46:47 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /trivia/css/pilot.app.css
+Stack Trace:
+#0 /Applications/MAMP/htdocs/trivia/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
