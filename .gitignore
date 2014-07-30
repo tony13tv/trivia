@@ -5,4 +5,7 @@ app/tmp
 app/webroot/files
 app/Vendor/composer
 composer.lock
-vendor
+vendor/autoload.php
+vendor/composer/autoload_real.php
+app/Vendor/autoload.php
+trivia.iml
