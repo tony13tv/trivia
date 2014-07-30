@@ -1,0 +1,7 @@
+{
+    "name" : "Larach y Cia. Trivia App",
+    "licence": "MIT",
+    "require" : {
+        "josegonzalez/cakephp-upload": "1.1.1"
+    }
+}

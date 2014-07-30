@@ -6,7 +6,7 @@
 		<?= $this->html->image('/files/' . $question['Question']['image'], ['width' => '100%']) ?>
 	</div>
 	<div class="health">
-			INTENTOS<br/><br/>
+		INTENTOS<br/><br/>
 		<? for ($i = 0; $i < $lives; $i++) : ?>
 			<?= $this->html->image('heart.png', ['width' => '36']) ?>
 		<? endfor; ?>

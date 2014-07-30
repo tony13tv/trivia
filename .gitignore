@@ -3,3 +3,6 @@
 #Temp files
 app/tmp
 app/webroot/files
+app/Vendor/composer
+composer.lock
+vendor

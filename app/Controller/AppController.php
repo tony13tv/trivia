@@ -45,4 +45,10 @@
 				$this->layout = 'admin';
 			}
 		}
+
+		public function index() {
+			$this->loadModel('Question');
+			$question = $this->Question->find('first', ['order' => 'rand()']);
+			$this->set(compact('question'));
+		}
 	}
