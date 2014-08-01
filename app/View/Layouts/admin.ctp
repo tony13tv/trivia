@@ -14,6 +14,12 @@
 			.inner-wrap {
 				height: 100%;
 			}
+
+			.main-section {
+				height: 100%;
+				overflow: scroll;
+				padding: 30px 60px;
+			}
 		</style>
 	</head>
 	<body>
@@ -55,6 +61,9 @@
 
 			});
 		</script>
+		<link rel="stylesheet" href="/trivia/datatables/css/jquery.dataTables.min.css"/>
+		<script src="/trivia/datatables/js/jquery.dataTables.min.js"></script>
+		<?= $this->fetch('script') ?>
 	</body>
 </html>
 

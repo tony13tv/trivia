@@ -32,8 +32,6 @@
 	class AppModel extends Model {
 		public $actsAs = ['Containable'];
 
-		public $recursive = 5;
-
 		public $images = [];
 
 		public function beforeSave($options = array()) {
@@ -43,8 +41,11 @@
 
 					// store the filename in the array to be saved to the db
 					$this->data[ $this->alias ][ $image ] = $this->data[ $this->alias ][ $image ]['name'];
+				} else {
+					$this->data[ $this->alias ][ $image ] = "";
 				}
 			}
+
 			return parent::beforeSave($options);
 		}
 	}

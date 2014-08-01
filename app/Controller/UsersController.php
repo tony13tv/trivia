@@ -111,8 +111,8 @@
 		 * @return void
 		 */
 		public function admin_index() {
-			$this->User->recursive = 0;
-			$this->set('users', $this->Paginator->paginate());
+			$fields = array_keys($this->User->getColumnTypes());
+			$this->set(compact('fields'));
 		}
 
 		/**
@@ -198,14 +198,42 @@
 				$this->Session->setFlash(__('The user could not be deleted. Please, try again.'));
 			}
 
-			return $this->redirect(array('action' => 'index'));
+			$this->redirect(array('action' => 'index'));
+		}
+
+		public function admin_login() {
+			if ($this->request->is('post')) {
+				if ($this->Auth->login()) {
+					$this->redirect($this->Auth->redirectUrl());
+				} else {
+					$this->Session->setFlash('Email/Password wrong try again.', 'default', ['class' => 'warning']);
+				}
+			}
+		}
+
+		public function admin_logout() {
+			$this->Auth->logout();
+			$this->redirect($this->Auth->redirectUrl());
 		}
 
 		public function login() {
 
 		}
 
-		public function register() {
+		public function logout() {
 
+		}
+
+		public function register() {
+			if ($this->request->is('post')) {
+				if ($this->User->save($this->request->data)) {
+					if ($this->Auth->login()) {
+						$this->Session->setFlash('Bienvenido a la trivia de Larach y Cia.');
+						$this->redirect($this->Auth->loginRedirect);
+					} else {
+						$this->redirect($this->Auth->logoutRedirect);
+					}
+				}
+			}
 		}
 	}

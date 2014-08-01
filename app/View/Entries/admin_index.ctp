@@ -1,4 +1,3 @@
-<h1>All Questions</h1>
 <div class="container">
 	<table data-table>
 		<thead>
@@ -17,7 +16,7 @@
 	$('[data-table]').dataTable({
 		"bProcessing": true,
 		"bServerSide": true,
-		"sAjaxSource": "Questions/table/Question"
+		"sAjaxSource": "Entries/table/Entry"
 	});
 </script>
 <?= $this->end() ?>

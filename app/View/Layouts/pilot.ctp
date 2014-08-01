@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<?= $this->Html->charset(); ?>
+		<?= $this->fetch('meta') ?>
 		<title>
 			<?= $title_for_layout; ?>
 		</title>
@@ -11,21 +12,18 @@
 		<?= $this->Html->css('normalize') ?>
 		<?= $this->Html->css('foundation.min') ?>
 		<?= $this->Html->css('pilot.app') ?>
-
-		<?= $this->fetch('meta') ?>
 		<?= $this->fetch('css') ?>
-		<?= $this->fetch('script') ?>
 	</head>
 	<body>
 		<div id="container" class="container">
-			<div id="header container">
+			<div id="header" class="container">
 				<?= $this->fetch('header'); ?>
 			</div>
-			<div id="content container">
+			<div id="content" class="container">
 				<?= $this->Session->flash(); ?>
 				<?= $this->fetch('content'); ?>
 			</div>
-			<div id="footer container">
+			<div id="footer" class="container">
 				<?= $this->fetch('footer'); ?>
 			</div>
 		</div>
@@ -36,9 +34,10 @@
 		<?= $this->Html->script('vendor/placeholder') ?>
 		<script>
 			$(document).foundation();
-			$('[data-clickable]').on('click', function() {
+			$('[data-clickable]').on('click', function () {
 				window.location = $(this).attr('href');
 			});
 		</script>
+		<?= $this->fetch('script') ?>
 	</body>
 </html>

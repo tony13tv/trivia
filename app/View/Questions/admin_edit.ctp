@@ -3,5 +3,6 @@
 <?=$this->form->input('content')?>
 <?=$this->form->input('image', ['type' => 'file'])?>
 <?=$this->form->input('category_id')?>
+<?=$this->form->input('right_answer_id')?>
 <?=$this->form->button('Save')?>
 <?=$this->form->end()?>

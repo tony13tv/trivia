@@ -1,24 +1,22 @@
-<div class="users form">
-<?php echo $this->Form->create('User'); ?>
-	<fieldset>
-		<legend><?php echo __('Admin Edit User'); ?></legend>
+<h1>Edit User</h1>
+<?= $this->form->create('User', ['autocomplete' => 'off']) ?>
+<?= $this->form->input('id') ?>
+<?= $this->form->input('username') ?>
+<?= $this->form->input('first_name') ?>
+<?= $this->form->input('last_name') ?>
+<?
+	if (strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== false) {
+		?>
+		<div style="background:#ffff66;border:1px solid #ff9900;font-size:1.5em;padding:1em;">
+			The Safari browser has a known bug: autocomplete replaces required data in our form with incorrect values.
+			Unfortunately this may prevent you from adding products to the shopping cart. <br/><br/>Please try a
+			different browser or go to your browser settings and turn off autocomplete and refresh the page.
+		</div>
 	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('username');
-		echo $this->Form->input('group_id');
-		echo $this->Form->input('password');
-		echo $this->Form->input('email');
-		echo $this->Form->input('first_name');
-		echo $this->Form->input('last_name');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('User.id')), array(), __('Are you sure you want to delete # %s?', $this->Form->value('User.id'))); ?></li>
-		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
-	</ul>
-</div>
+	}
+?>
+<?= $this->form->input('email', ['autocomplete' => 'off']) ?>
+<?= $this->form->input('password', ['autocomplete' => 'off']) ?>
+<?= $this->form->input('role', ['type' => 'select', 'options' => ['admin' => 'admin', 'non-admin' => 'non-admin']]) ?>
+<?= $this->form->button('Save') ?>
+<?= $this->form->end() ?>

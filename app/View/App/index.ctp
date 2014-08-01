@@ -1,20 +1,18 @@
-<div id="question">
-	<div class="image">
-		<div class="progress small-10 small-offset-1 secondary round">
-			<span class="meter" style="width: 80%"></span>
-		</div>
-		<?= $this->html->image('/files/' . $question['Question']['image'], ['width' => '100%']) ?>
-	</div>
-	<div class="health">
-		INTENTOS<br/><br/>
-		<? for ($i = 0; $i < $lives; $i++) : ?>
-			<?= $this->html->image('heart.png', ['width' => '36']) ?>
-		<? endfor; ?>
-	</div>
-	<div class="question">
-		<?= $this->form->create('Entry') ?>
-		<h1 class="brain-flower"><?= $question['Question']['content'] ?></h1>
-		<?= $this->form->input('Answers', ['type' => 'select', 'class' => 'hidden', 'label' => ['class' => 'brain-flower'], 'options' => $question['Answer']], ['legend' => false]) ?>
-		<?= $this->form->end() ?>
-	</div>
+<div class="title">
+	<?= $this->html->image('pilot.logo.ffffff.png') ?>
+	<h1>PREGUNTA</h1>
 </div>
+<div class="pencils">
+	<?= $this->html->image('pencils.png') ?>
+</div>
+<div class="papercut">
+	<div class="game-summary brain-flower">
+		Diviertete con las preguntas que Pilot y <br/> Larach y Cía. traen para tí contesta todas <br/> las que puedas y
+		Ganate <br/> una Tablet de 10”
+	</div>
+	<?= $this->html->link('Jugar', ['action' => 'play'], ['class' => 'button brain-flower', 'id' => 'play_btn']) ?>
+	<br/>
+	<?= $this->html->image('larach.office.png') ?>
+	<?= $this->html->image('heraldo.logo.png') ?>
+</div>
+

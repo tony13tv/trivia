@@ -9,10 +9,11 @@
 		}
 
 		public function admin_add() {
+			$questions = $this->Answer->Question->find('list');
+			$this->set(compact('questions'));
 			if ($this->request->is('post')) {
 				if ($this->Answer->save($this->request->data)) {
 					$this->Session->setFlash(__('The answer has been saved.'));
-
 					return $this->redirect(array('action' => 'index'));
 				} else {
 					$this->Session->setFlash(__('The answer could not be saved. Please, try again.'));
@@ -36,5 +37,7 @@
 				$options = array('conditions' => array('Answer.' . $this->Answer->primaryKey => $id));
 				$this->request->data = $this->Answer->find('first', $options);
 			}
+			$questions = $this->Answer->Question->find('list');
+			$this->set(compact('questions'));
 		}
 	}

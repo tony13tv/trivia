@@ -10,4 +10,11 @@
 				'foreignKey' => 'question_id'
 			]
 		];
+
+		public $hasMany = [
+			'Entry' => [
+				'className' => 'Entry',
+				'foreignKey' => 'answer_id'
+			]
+		];
 	}

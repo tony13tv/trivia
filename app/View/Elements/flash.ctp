@@ -1,6 +1,8 @@
-<? if ($this->session->check('Message.flash')) { ?>
-	<div data-alert class="alert-box <?= join(" ", $this->session->read('Message.flash.params')) ?> radius">
-		<?= $this->session->flash() ?>
-		<a href="#" class="close">&times;</a>
-	</div>
+<? if ($this->session->check('Message')) { ?>
+	<? foreach ($this->session->read('Message') as $key => $message) : ?>
+		<div data-alert class="alert-box <?= join(" ", $message['params']) ?> radius">
+			<?= $this->session->flash($key) ?>
+			<a href="#" class="close">&times;</a>
+		</div>
+	<? endforeach; ?>
 <? } ?>
